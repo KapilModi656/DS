@@ -192,3 +192,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Crypto competition large data files
+Competition/Crypto/train.parquet
+Competition/Crypto/test.parquet
