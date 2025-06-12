@@ -5,6 +5,8 @@ import tensorflow as tf
 import joblib
 import pandas as pd
 
+st.write("Current working directory:", os.getcwd())
+st.write("Files in current directory:", os.listdir('.'))
 # Load model and preprocessor
 model = tf.keras.models.load_model('churn_model.h5',compile=False)  # Make sure this exists
 preprocessor = joblib.load('preprocessor.pkl')  # Make sure this exists
