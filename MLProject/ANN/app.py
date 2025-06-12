@@ -8,8 +8,8 @@ import os
 st.write("Current working directory:", os.getcwd())
 st.write("Files in current directory:", os.listdir('.'))
 # Load model and preprocessor
-model = tf.keras.models.load_model('churn_model.h5',compile=False)  # Make sure this exists
-preprocessor = joblib.load('preprocessor.pkl')  # Make sure this exists
+model = tf.keras.models.load_model('MLProject/ANN/churn_model.h5',compile=False)  # Make sure this exists
+preprocessor = joblib.load('MLProject/ANN/preprocessor.pkl')  # Make sure this exists
 
 st.title("🔍 Customer Churn Prediction App")
 st.write("Enter customer data below to predict if they will churn (exit) or not.")
