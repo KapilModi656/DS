@@ -47,6 +47,7 @@ if st.button("Predict"):
     try:
         input_transformed = preprocessor.transform(input_df)
         pred = model.predict(input_transformed)
+        st.write("Raw Prediction Output:", pred[0][0])
         label = "❌ Customer Will Exit" if pred[0][0] > 0.5 else "✅ Customer Will Stay"
         st.success(f"Prediction: {label}")
     except Exception as e:
