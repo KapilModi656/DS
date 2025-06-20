@@ -451,15 +451,17 @@ if button:
                             ">
                                 {display_val}
                             </div>
-                            <div style="
+                            <div style=f"
                                 text-align: center;
                                 font-size: 1.15em;
                                 color: #b0b0b0;
                                 z-index: 2;
                                 position: relative;
+                                if predict == "Today Closing Price" else "display: none;
+                                text-shadow: 0 1px 6px #ffd70033;
                             ">
                                 {f"(USD)" if predict == "Today Closing Price" else ""}
-                            </div> if predict == "Today Closing Price" else ""
+                            </div>
                         """,
                         unsafe_allow_html=True
                     )
