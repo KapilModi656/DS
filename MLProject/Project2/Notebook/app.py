@@ -7,9 +7,9 @@ import yfinance as yf
 import ta
 from tensorflow import keras
 from datetime import datetime, timedelta
-
+import os
 st.set_page_config(layout="wide", page_title="ML Dashboard", page_icon="📈")
-
+print("Current working dir:", os.getcwd())
 # --- Top navigation bar (professional, clean, user-friendly) ---
 st.markdown(
     """
