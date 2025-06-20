@@ -244,10 +244,10 @@ if button:
     stock = stock.lower()
     # --- Loading spinner for prediction ---
     with st.spinner('Predicting...'):
-        model = keras.models.load_model(f"models/price_model_{stock}.keras")
-        scaler_features = joblib.load(f"models/price_feat_{stock}.pkl")
-        scaler_seq = joblib.load(f"models/price_seq_{stock}.pkl")
-        scaler_y = joblib.load(f"models/price_y_{stock}.pkl")
+        model = keras.models.load_model(f"MLProject/Project2/Notebook/models/price_model_{stock}.keras")
+        scaler_features = joblib.load(f"MLProject/Project2/Notebook/models/price_feat_{stock}.pkl")
+        scaler_seq = joblib.load(f"MLProject/Project2/Notebook/models/price_seq_{stock}.pkl")
+        scaler_y = joblib.load(f"MLProject/Project2/Notebook/models/price_y_{stock}.pkl")
         # Use today's date for prediction
         start_date = pd.to_datetime(today) - pd.Timedelta(days=110)
         end_date = pd.to_datetime(today) + pd.Timedelta(days=1)
