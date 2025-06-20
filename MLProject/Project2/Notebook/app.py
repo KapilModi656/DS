@@ -351,8 +351,8 @@ if button:
                     # --- Output selection logic ---
                     pred_price = scaler_y.inverse_transform(predicted[0])[0][0]
                     pred_price_val = round(float(np.expm1(pred_price)), 2)
-                    pred_trend = np.argmax(predicted[1][0][0])-1
-                    pred_signal = np.argmax(predicted[2][0][0])-1
+                    pred_trend = np.argmax(predicted[1])-1
+                    pred_signal = np.argmax(predicted[2])-1
                     # Decide what to display based on user selection
                     if predict == "Today Closing Price":
                         display_val = f"${pred_price_val}"
