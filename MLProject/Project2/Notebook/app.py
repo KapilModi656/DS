@@ -458,8 +458,8 @@ if button:
                                 z-index: 2;
                                 position: relative;
                             ">
-                                {"(USD)" if predict == "Today Closing Price" else ""}
-                            </div>
+                                {f"(USD)" if predict == "Today Closing Price" else ""}
+                            </div> if predict == "Today Closing Price" else ""
                         """,
                         unsafe_allow_html=True
                     )
