@@ -55,12 +55,12 @@ class ModelTrainer:
                 os.makedirs(os.path.dirname(self.trainer_config.amazon_model_path), exist_ok=True)
                 df = pd.read_csv(path)
 
-                # Ensure all columns are numeric
+               
                 for col in ['target', 'Trend', 'Signal']:
                     if col in df.columns:
                         df[col] = pd.to_numeric(df[col], errors='coerce')
 
-                # Drop rows with NaN values in critical columns
+                
                 df.dropna(subset=['target', 'Trend', 'Signal'], inplace=True)
 
                 df.fillna(method='ffill', inplace=True)

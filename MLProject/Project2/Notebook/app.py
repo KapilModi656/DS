@@ -348,12 +348,12 @@ if button:
                     X_last_seq = X[-1].reshape(1, 60, 1)
                     X_last_feat = X_feat[-1].reshape(1, X_feat.shape[1])
                     predicted = model.predict([X_last_seq, X_last_feat])
-                    # --- Output selection logic ---
+                   
                     pred_price = scaler_y.inverse_transform(predicted[0])[0][0]
                     pred_price_val = round(float(np.expm1(pred_price)), 2)
                     pred_trend = np.argmax(predicted[1])-1
                     pred_signal = np.argmax(predicted[2])-1
-                    # Decide what to display based on user selection
+                   
                     if predict == "Today Closing Price":
                         display_val = f"${pred_price_val}"
                         display_label = "Predicted Closing Price"

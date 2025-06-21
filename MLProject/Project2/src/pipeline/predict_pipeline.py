@@ -31,7 +31,7 @@ class PredictionPipeline:
         try:
             logging.info("Starting prediction pipeline")
 
-            # Step 1: Data Ingestion
+           
             paths = self.config.data_ingestion_config.initiate_data_ingestion()
             logging.info("Data ingestion completed")
             DataTransformation = self.config.data_transformation_config
@@ -39,7 +39,7 @@ class PredictionPipeline:
             DataTransformation.transform_data(paths, sequence_length=self.config.sequence_length)
             logging.info("Data transformation completed")
             
-            # Validate paths
+            
             if ticker_name not in self.config.tickers:
                 raise CustomException(f"Ticker name {ticker_name} is not valid.", sys)
 
@@ -53,7 +53,7 @@ class PredictionPipeline:
 
             df = pd.read_csv(df_path)
 
-            # Validate DataFrame columns
+            
             
             df.fillna(method='ffill', inplace=True)
             df.fillna(method='bfill', inplace=True)
@@ -77,7 +77,7 @@ class PredictionPipeline:
             
             logging.info(f"Sequence and features loaded from {sequence_path} and {features_path}")
 
-            # Step 3: Model Prediction
+            
             model_path = os.path.join('Models', f"{self.config.tickers[ticker_name]}_model.keras")
             model = load_model(model_path)
 
@@ -108,6 +108,6 @@ class PredictionPipeline:
 
 if __name__ == "__main__":
     pipeline = PredictionPipeline()
-    ticker_name = 'AAPL'  # Example ticker name
+    ticker_name = 'AAPL' 
     result = pipeline.run(ticker_name)
     print(f"Prediction Result for {ticker_name}: {result}")

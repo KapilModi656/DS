@@ -37,7 +37,7 @@ class DataIngestion:
             microsoft = data['MSFT'].copy()
             ethereum = data['ETH-USD'].copy()
 
-            # Reset index if needed
+           
             apple.reset_index(inplace=True)
             bitcoin.reset_index(inplace=True)
             meta.reset_index(inplace=True)

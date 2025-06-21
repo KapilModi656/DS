@@ -40,7 +40,7 @@ class DataTransformation:
                 df['ADX_pos'] = ta.trend.adx_pos(df['High'], df['Low'], df['Close'], window=14)
                 df['ADX_neg'] = ta.trend.adx_neg(df['High'], df['Low'], df['Close'], window=14)
                 df['OBV'] = ta.volume.on_balance_volume(df['Close'], df['Volume'])
-                # Calculate Chaikin Oscillator manually
+                
                 acc_dist = ta.volume.AccDistIndexIndicator(high=df['High'], low=df['Low'], close=df['Close'], volume=df['Volume']).acc_dist_index()
                 df['Chaikin_AO'] = acc_dist.ewm(span=3, adjust=False).mean() - acc_dist.ewm(span=10, adjust=False).mean()
                 kst_indicator = ta.trend.KSTIndicator(
